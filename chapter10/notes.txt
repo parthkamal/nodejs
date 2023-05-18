@@ -1,0 +1,7 @@
+in this chapter we will talk about how to send the mail in the local server
+
+step1 : install nodemailer
+step2 : allow less secure app https://myaccount.google.com/lesssecureapps
+step3 : write program
+step4 : check mail
+
