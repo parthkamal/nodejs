@@ -1,0 +1,19 @@
+in this chapter we will be talking about event emitter. 
+
+event emitter basically ek class provide kari gayi hai jiske through , we can make custom events in our nodejs application
+
+we can also define the custom event and we also emit and define their listeners too 
+
+const EventEmitter = require('events');
+
+// Create a new EventEmitter object
+const myEmitter = new EventEmitter();
+
+// Register a listener for the 'myEvent' event
+myEmitter.on('myEvent', (arg1, arg2) => {
+  console.log('Event occurred with arguments:', arg1, arg2);
+});
+
+// Emit the 'myEvent' event
+myEmitter.emit('myEvent', 'Hello', 'World');
+
