@@ -1,0 +1,1 @@
+in this chapter we are talking about ejs as a template engine for ssr in nodejs
