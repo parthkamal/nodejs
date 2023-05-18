@@ -1,0 +1,1 @@
+in this chapter we have talked about how to install nodejs and npm in linux
