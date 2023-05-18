@@ -1,0 +1,36 @@
+in this chapter , we will be talking about middlewares
+
+in contrast to webdevelopoment , middlewares are basically the functions which comes between the request - response cycle.
+in javascript , the concept of middlewares is mainly used in frameworks called express js . 
+
+for example we want to check for each incoming request that comes to the sever that ( whether the user is above 18 or not) 
+
+so for that we will use middleware something like : 
+
+const express = require('express'); 
+const app = express(); 
+
+const http = require('http'); 
+
+const server = http.createServer(app); 
+
+
+const ageMiddleware = (req,res,next) => 
+  { const {age} = req.body ; 
+  if(age >=18) next(); 
+
+
+  return res.json('400', 'your are not allowed kitten');
+
+}
+
+
+app.use(ageMiddleware); 
+
+app.get('/', (req,res) => {
+
+    res.json('hello from the server'); 
+
+    });
+
+server.listen(3000, ()=> console.log('server is listening on port 3000'));
