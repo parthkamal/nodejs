@@ -5,12 +5,13 @@
   "main": "demo.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node demo.js"
+    "start": "nodemon demo.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "nodemon": "^2.0.22",
     "upper-case": "^2.0.2"
   }
 }
