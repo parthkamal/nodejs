@@ -1,0 +1,16 @@
+in this chapter we will talk about anonymous and callback function 
+
+//anonymous and callback function
+
+Anonymous function - these functions does not have a name. They are generally used as an argument or assigned to a variable 
+
+
+For example - 
+
+Const add = function (a,b) {return a+b}; 
+
+In this example function(a,b) is anonymous. 
+
+Callback function - it is a function that is passed as an argument to another function and is intended to be called back at a later time.
+
+
