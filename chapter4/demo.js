@@ -1,7 +1,8 @@
 const http = require('http');
+const resObject = [1,2,3,3,4] // javascript list
 
 const server  = http.createServer((req,res) => {
-	res.write("hello from the nodejs server")
+	res.write( JSON.stringify(resObject));
 	res.end();
 }
 ); 
