@@ -1,0 +1,11 @@
+in this chapter, we will be talking about express js module
+
+
+//express js 
+
+it's a framework , which is build on top of nodejs (nodejs work javascript v8 engine)
+express js makes our work very handy in terms of : routing, middleware, templates, sessions, authentication, caching
+
+app() refers to the instance of an Express application. it is not the server itself 
+
+we create an instance of the Express application using express(), and then we pass the app object as an argument to http.createServer(). This creates an HTTP server that handles requests using the Express application logic.
