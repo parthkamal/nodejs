@@ -1,0 +1,6 @@
+in this chapter , we have talked about how to import and export files in node js
+
+
+module.exports return a single variable or a list
+
+to import that module we have to use require function and we can also destructur them
