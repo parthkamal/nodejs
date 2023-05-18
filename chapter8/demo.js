@@ -1,7 +1,12 @@
 const http = require('http'); 
+const {upperCase} = require('upper-case');
 
 const server = http.createServer( (req,res) => {
-	const html  = '<h1> hello from the server side </h1>';
+	
+
+	const value = upperCase('hello from the node js server');
+
+	const html  = `<h1>  ${value} </h1>`;
 
 	//now writing the headers 
 	const headers = {
