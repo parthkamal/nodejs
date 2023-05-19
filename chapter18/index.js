@@ -7,6 +7,12 @@ const server = http.createServer(app);
 
 const router = require('./routes');
 
+app.set('view engine', 'ejs');
+
+app.use(express.static('public'));
+
+console.log(__dirname+'/public');
+
 
 app.use(router);
 
