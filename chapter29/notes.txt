@@ -1,0 +1,9 @@
+in this chapter we will be talking about fundamentals of node js 
+
+fundamentals of nodejs
+
+
+1. const variable cannot be reassigned
+2. the difference between == && === is that == gives true for "10" and 10, where as === will give it false (it checks both the value and the type)
+3. for import and export in node js , we use module.exports and import statemetn. module.exports make the module of the given file. (which may contains functions and variables)
+4. filter is a higher order function in javascript which filter the items from a list
