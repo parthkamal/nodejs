@@ -5,8 +5,10 @@ const mongoose = require('mongoose');
 const app = express();
 const server = http.createServer(app);
 const router = require('./routes');
+const authRouter = require('./authRoutes');
 
 app.use('/',router);
+app.use('/',authRouter);
 
 //allow the json and html form url encoded 
 app.use(express.json());

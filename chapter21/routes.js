@@ -11,7 +11,7 @@ router.use(express.urlencoded({ extended: false }));
 
 router.get('/', (request, response) => {
     const message = 'hello from the server';
-    res.json({ message });
+    response.json({ message });
 });
 
 router.get('/user', (request, response) => {
