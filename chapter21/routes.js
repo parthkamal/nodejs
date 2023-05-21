@@ -71,4 +71,15 @@ router.delete('/user/:id', (request, response) => {
 })
 
 
+router.put('/user/:id', (request, response) => {
+    const {id} = request.params;
+    const {name, email, address} = request.body; 
+    User.findOneAndUpdate({_id: id}, {name,email, address}).then((result)=>{
+        response.status(200).json({result});
+    }).catch((error) =>{
+        response.status(400).json({error});
+    })
+})
+
+
 module.exports = router;
