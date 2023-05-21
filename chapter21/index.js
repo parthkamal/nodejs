@@ -6,17 +6,17 @@ const app = express();
 const server = http.createServer(app);
 
 mongoose.connect('mongodb+srv://kamalparth40:lo26iezAOLDQpBp8@cluster0.q4po6dt.mongodb.net/?retryWrites=true&w=majority').then(()=>{
-    console.log('connected to database');
+	console.log('connected to database');
 }).catch((error)=> {
-    console.log(error);
+	console.log(error);
 });
 
 
 app.get('/',(request, response) => {
 
-   response.setHeader('Content-Type', 'application/json');
-   const message = "hello from the mongodb server side"
-   response.json( {message});
+	response.setHeader('Content-Type', 'application/json');
+	const message = "hello from the mongodb server side"
+	response.json( {message});
 })
 
 
