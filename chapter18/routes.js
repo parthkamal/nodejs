@@ -19,11 +19,17 @@ router.get('/service', (req, res) => {
     res.render('service');
 });
 
+router.get('/login', (req, res) => {
+    console.log(req.query);
+    res.render('login');
+});
+
 router.get('/user/:title', (req, res) => {
     console.log(req.params);
-    const {title} = req.params; 
+    const { title } = req.params;
     res.render('user', { title });
 })
+
 
 
 
