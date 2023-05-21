@@ -1,0 +1,6 @@
+in this chapter, we are talking about package.json file. 
+
+package.json keeps the details about the project (coding details)
+
+
+for example ; git , dependency , version , scripts , dev-dependency 
