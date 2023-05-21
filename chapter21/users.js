@@ -13,7 +13,7 @@
 const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema( {
-	_id: mongoose.Schema.Types.ObjectId,
+	_id: mongoose.Types.ObjectId,
 	name: String, 
 	email : String, 
 	address : String

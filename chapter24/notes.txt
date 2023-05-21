@@ -1,0 +1,1 @@
+in this chapter, we will talk about how to insert collection in mongodb
