@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 
 const app = express();
 const server = http.createServer(app);
+const User = require('./users');
 
 mongoose.connect('mongodb+srv://kamalparth40:lo26iezAOLDQpBp8@cluster0.q4po6dt.mongodb.net/?retryWrites=true&w=majority').then(()=>{
 	console.log('connected to database');
@@ -12,11 +13,17 @@ mongoose.connect('mongodb+srv://kamalparth40:lo26iezAOLDQpBp8@cluster0.q4po6dt.m
 });
 
 
+
+
 app.get('/',(request, response) => {
 
 	response.setHeader('Content-Type', 'application/json');
 	const message = "hello from the mongodb server side"
 	response.json( {message});
+
+	const users = User.find({}); 
+	if(users) console.log(users); 
+	else console.log('user not found');
 })
 
 
