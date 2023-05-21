@@ -1,0 +1,8 @@
+in this chapter we will talk about the coure module in nodejs 
+
+
+core modules - 
+core modules in the node js are provided by the runtime environment itself. Butfor using them we need require statement to import them. for example, fs, path,http, util etc
+
+global modules - 
+global modules are available globally within the nodejs environment without the need for importing or using require() function . For example , process, console, setTimeOut , setInterval, Buffer etc.
