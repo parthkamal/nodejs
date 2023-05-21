@@ -1,0 +1,213 @@
+//node js tutorial 
+
+
+Nodejs is a javascript runtime environment . 
+It enables us to write server side applications (it is not a framework)
+It uses javascript as the programming language. 
+Npm is a open source package manager for nodejs.
+
+//uses of nodejs
+
+Mostly used for making api. 
+Also used for making website and web app. 
+Server side rendering (server side scripting)
+
+//api 
+Provides abstraction of the internal details of the server side programming. 
+Acts as a middleware between the client and the database. 
+Provides protection to the database. 
+
+
+First node js program in chapter3
+First node js server in chapter4
+
+
+//anonymous and callback function
+
+Anonymous function - these functions does not have a name. They are generally used as an argument or assigned to a variable 
+
+
+For example - 
+
+Const add = function (a,b) {return a+b}; 
+
+In this example function(a,b) is anonymous. 
+
+Callback function - it is a function that is passed as an argument to another function and is intended to be called back at a later time.
+
+
+module.exports return a single variable or a list
+
+to import that module we have to use require function and we can also destructure them (object destructuring )
+//json - it is a string format which is very light in nature (therefore it is used as a format between the api and the client)
+
+Json.stringify - converts objects to json string
+Json.parse - converts string to javascript object.
+
+
+writeHead() function to write the headers. 
+write() to write the body
+end() to complete the process and return the request
+
+Lets comes with a example (html webpage in node js)
+
+//first html webserver in chapter8
+
+Npm is a package manager for both javascript and nodejs.
+
+ 
+step1 : install nodemailer
+step2 : allow less secure app https://myaccount.google.com/lesssecureapps
+step3 : write program
+step4 : check mail
+
+
+Nodemon is a package which automatically refresh the server whenever any changes happen in server side code
+
+Fs module for reading the file
+
+fs.readFile('/path/to/file.html', 'utf8', (err, data) => {
+    if (err) {
+      console.error(err);
+      res.statusCode = 500;
+      res.end('Internal Server Error');
+      return;
+    }
+
+
+event emitter basically ek class provide kari gayi hai jiske through , we can make custom events in our nodejs application
+
+we can also define the custom event and we also emit and define their listeners too 
+
+For example - 
+
+const EventEmitter = require('events');
+
+// Create a new EventEmitter object
+const myEmitter = new EventEmitter();
+
+// Register a listener for the 'myEvent' event
+myEmitter.on('myEvent', (arg1, arg2) => {
+  console.log('Event occurred with arguments:', arg1, arg2);
+});
+
+// Emit the 'myEvent' event
+myEmitter.emit('myEvent', 'Hello', 'World');
+
+
+//express js module
+
+
+it's a framework , which is build on top of nodejs (nodejs work javascript v8 engine)
+express js makes our work very handy in terms of : routing, middleware, templates, sessions, authentication, caching
+
+app() refers to the instance of an Express application. it is not the server itself 
+
+we create an instance of the Express application using express(), and then we pass the app object as an argument to http.createServer(). This creates an HTTP server that handles requests using the Express application logic.
+
+
+Express js app in chapter15
+
+
+There are many routing methods in express js such as : get, post, put, delete etc 
+
+//middlewares
+
+in contrast to web development , middlewares are basically the functions which comes between the request - response cycle. in javascript , the concept of middlewares is mainly used in frameworks called express js . 
+
+for example we want to check for each incoming request that comes to the sever that ( whether the user is above 18 or not) 
+
+so for that we will use middleware something like : 
+
+const express = require('express'); 
+const app = express(); 
+const http = require('http'); 
+const server = http.createServer(app); 
+
+const ageMiddleware = (req,res,next) => 
+  { const {age} = req.body ; 
+  if(age >=18) next(); 
+  return res.json('400', 'your are not allowed kitten');
+}
+app.use(ageMiddleware); 
+app.get('/', (req,res) => {
+    res.json('hello from the server'); 
+    });
+server.listen(3000, ()=> console.log('server is listening on port 3000'));
+~
+
+Dynamic router in chapter18 (here we are dynamically rendering html webpages )
+
+We can define routes of the app by using express.Router() middleware.
+
+
+We can use ejs as a template engine for displaying dynamic content. To access the url parameters we can use the function named req.params
+
+For example : 
+
+router.get('/user/:title', (req, res) => {
+    console.log(req.params);
+    const {title} = req.params;  
+    res.render('index', { title });  //rendering index.ejs from the views folder.
+})
+
+
+We can make common components in ejs using  <%- include(‘components/navbar) %>
+We can make common styles using static middlewares ‘app.use(express.static(‘public’));’
+
+
+Query params - ‘url/?name=parth & age=18’ generally used when the data are usually optional 
+Url params - ‘url/:id’ generally used when the parameters are required and have a direction relationship with the route
+
+We can get the url parameters by (defining the url parameters and getting it through req.params) 
+We can get the query parameters by (getting the req.query object)
+
+ For each project we can only have one cluster. In mongodb . therefore to make a shared cluster we have to make a new project. 
+
+Mongodb crud application in chapter21
+
+To prevent the password and name from appearing in the url ( because we are using the get request method). We have to define the post request api for the . 
+
+
+Status code for internal server error is 500, 
+Status code for successful is 200, 
+Status code for other types of error is 400
+
+//what happens in a post request …
+
+User fill the form -> the form data object is created on the client side -> headers are attached -> form data is then url encoded -> the data is sent to the server -> on reaching the server it encounters the urlencoder body parser-> converted back to req.body object -> response sent back to the client 
+
+
+There are various status code used in web development. 
+
+//fundamentals of nodejs
+
+1. const variable cannot be reassigned
+2. the difference between == && === is that == gives true for "10" and 10, where as === will give it false (it checks both the value and the type)
+3. for import and export in node js , we use module.exports and import statement. module.exports make the module of the given file. (which may contains functions and variables)
+4. filter is a higher order function in javascript which filter the items from a list 
+
+
+// Core modules and global modules in nodejs
+
+core modules -
+core modules in the node js are provided by the runtime environment itself. But for using them we need require statement to import them. for example, fs, path,http, util etc
+
+global modules -
+global modules are available globally within the node js environment without the need for importing or using require() function . For example , process, console, setTimeOut , setInterval, Buffer etc.
+
+
+// why node js is single threaded ? (very famous interview question )
+Node js ek single threaded, asynchronous, non blocking io , javascript runtime environment hai . 
+
+Single threaded ka matlab , chahe jitne bhi user ho (multiple requests). Un sab ko ek hi thread manage karta hai. For example, 
+
+Phle ek request aayi say r1 , the thread will takes that request and gives its control to database, Aur ab wo free hai for handling other requests ( it is not waiting for completion of database operation of request r1 ). When the database operation is completed it puts a message in the event queue . jab thread dekhta hai message in the event queue, it returns that response to the respective client. 
+
+Result -> highly scalable, better utilisation of resources, high availability, good for intensive io apps.
+
+// How node js works? How to handle asynchronous data and operations in node js
+
+
+Node js jwt authentication app in chapter33
+
