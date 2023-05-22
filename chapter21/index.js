@@ -14,7 +14,7 @@ app.use('/',authRouter);
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 
-mongoose.connect('mongodb+srv://kamalparth40:lo26iezAOLDQpBp8@cluster0.q4po6dt.mongodb.net/?retryWrites=true&w=majority').then(()=>{
+mongoose.connect(`mongodb+srv://${username}:${password}@cluster0.q4po6dt.mongodb.net/?retryWrites=true&w=majority`).then(()=>{
 	console.log('connected to database');
 }).catch((error)=> {
 	console.log(error);
